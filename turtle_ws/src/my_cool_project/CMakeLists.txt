@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   dynamic_reconfigure 
+  move_base_msgs
+  actionlib
   roscpp
   rospy
 )
@@ -106,7 +108,7 @@ generate_dynamic_reconfigure_options(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   LIBRARIES turtle
-  CATKIN_DEPENDS nav_msgs roscpp rospy sensor_msgs std_msgs dynamic_reconfigure
+  CATKIN_DEPENDS nav_msgs roscpp rospy sensor_msgs std_msgs dynamic_reconfigure actionlib move_base_msgs
   #DEPENDS system_lib
 )
 
