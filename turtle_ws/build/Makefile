@@ -454,6 +454,19 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -727,32 +740,6 @@ geometry_msgs_generate_messages_lisp/fast:
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_eus
-
-# Build rule for target.
-geometry_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named robotController
-
-# Build rule for target.
-robotController: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 robotController
-.PHONY : robotController
-
-# fast build rule for target.
-robotController/fast:
-	$(MAKE) -f my_cool_project/CMakeFiles/robotController.dir/build.make my_cool_project/CMakeFiles/robotController.dir/build
-.PHONY : robotController/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -896,19 +883,6 @@ roscpp_generate_messages_py/fast:
 .PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_generate_messages_nodejs
-
-# Build rule for target.
-actionlib_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_nodejs
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	$(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-#=============================================================================
 # Target rules for targets named roscpp_generate_messages_eus
 
 # Build rule for target.
@@ -986,6 +960,32 @@ my_cool_project_gencfg/fast:
 	$(MAKE) -f my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build.make my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build
 .PHONY : my_cool_project_gencfg/fast
 
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_nodejs
+.PHONY : actionlib_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_generate_messages_nodejs/fast:
+	$(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1021,6 +1021,7 @@ help:
 	@echo "... dynamic_reconfigure_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -1042,8 +1043,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... robotController"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
@@ -1055,13 +1054,14 @@ help:
 	@echo "... move_base_msgs_generate_messages_nodejs"
 	@echo "... move_base_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_py"
-	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... my_cool_project_gencfg"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... main"
 .PHONY : help
 
 

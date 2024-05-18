@@ -136,8 +136,8 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory my_cool_project
 
 # Recursive "all" directory target.
-my_cool_project/all: my_cool_project/CMakeFiles/robotController.dir/all
 my_cool_project/all: my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/all
+my_cool_project/all: my_cool_project/CMakeFiles/main.dir/all
 
 .PHONY : my_cool_project/all
 
@@ -160,6 +160,7 @@ my_cool_project/clean: my_cool_project/CMakeFiles/nav_msgs_generate_messages_eus
 my_cool_project/clean: my_cool_project/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+my_cool_project/clean: my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
@@ -181,8 +182,6 @@ my_cool_project/clean: my_cool_project/CMakeFiles/move_base_msgs_generate_messag
 my_cool_project/clean: my_cool_project/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-my_cool_project/clean: my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-my_cool_project/clean: my_cool_project/CMakeFiles/robotController.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
@@ -194,13 +193,14 @@ my_cool_project/clean: my_cool_project/CMakeFiles/move_base_msgs_generate_messag
 my_cool_project/clean: my_cool_project/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/move_base_msgs_generate_messages_py.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/roscpp_generate_messages_py.dir/clean
-my_cool_project/clean: my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/roscpp_generate_messages_eus.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/actionlib_generate_messages_eus.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 my_cool_project/clean: my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/clean
+my_cool_project/clean: my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
+my_cool_project/clean: my_cool_project/CMakeFiles/main.dir/clean
 
 .PHONY : my_cool_project/clean
 
@@ -800,6 +800,33 @@ my_cool_project/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
 .PHONY : my_cool_project/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
+# Target rules for target my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
+.PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
+.PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# clean rule for target.
+my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+.PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
 # Target rules for target my_cool_project/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
@@ -1367,60 +1394,6 @@ my_cool_project/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
 .PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
-.PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
-.PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# clean rule for target.
-my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-.PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target my_cool_project/CMakeFiles/robotController.dir
-
-# All Build rule for target.
-my_cool_project/CMakeFiles/robotController.dir/all: my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/all
-	$(MAKE) -f my_cool_project/CMakeFiles/robotController.dir/build.make my_cool_project/CMakeFiles/robotController.dir/depend
-	$(MAKE) -f my_cool_project/CMakeFiles/robotController.dir/build.make my_cool_project/CMakeFiles/robotController.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=10,11 "Built target robotController"
-.PHONY : my_cool_project/CMakeFiles/robotController.dir/all
-
-# Build rule for subdir invocation for target.
-my_cool_project/CMakeFiles/robotController.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/robotController.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
-.PHONY : my_cool_project/CMakeFiles/robotController.dir/rule
-
-# Convenience name for target.
-robotController: my_cool_project/CMakeFiles/robotController.dir/rule
-
-.PHONY : robotController
-
-# clean rule for target.
-my_cool_project/CMakeFiles/robotController.dir/clean:
-	$(MAKE) -f my_cool_project/CMakeFiles/robotController.dir/build.make my_cool_project/CMakeFiles/robotController.dir/clean
-.PHONY : my_cool_project/CMakeFiles/robotController.dir/clean
-
-#=============================================================================
 # Target rules for target my_cool_project/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
@@ -1718,33 +1691,6 @@ my_cool_project/CMakeFiles/roscpp_generate_messages_py.dir/clean:
 .PHONY : my_cool_project/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir
-
-# All Build rule for target.
-my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/all:
-	$(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/depend
-	$(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_nodejs"
-.PHONY : my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
-.PHONY : my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# clean rule for target.
-my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
-.PHONY : my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
-
-#=============================================================================
 # Target rules for target my_cool_project/CMakeFiles/roscpp_generate_messages_eus.dir
 
 # All Build rule for target.
@@ -1886,7 +1832,7 @@ my_cool_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
 my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/all:
 	$(MAKE) -f my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build.make my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/depend
 	$(MAKE) -f my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build.make my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=9 "Built target my_cool_project_gencfg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=12 "Built target my_cool_project_gencfg"
 .PHONY : my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1905,6 +1851,60 @@ my_cool_project_gencfg: my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/ru
 my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/clean:
 	$(MAKE) -f my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build.make my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/clean
 .PHONY : my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/clean
+
+#=============================================================================
+# Target rules for target my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir
+
+# All Build rule for target.
+my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/all:
+	$(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/depend
+	$(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_nodejs"
+.PHONY : my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
+.PHONY : my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_nodejs: my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_generate_messages_nodejs
+
+# clean rule for target.
+my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
+.PHONY : my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target my_cool_project/CMakeFiles/main.dir
+
+# All Build rule for target.
+my_cool_project/CMakeFiles/main.dir/all: my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/all
+	$(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/depend
+	$(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=9,10,11 "Built target main"
+.PHONY : my_cool_project/CMakeFiles/main.dir/all
+
+# Build rule for subdir invocation for target.
+my_cool_project/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles 0
+.PHONY : my_cool_project/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: my_cool_project/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+my_cool_project/CMakeFiles/main.dir/clean:
+	$(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/clean
+.PHONY : my_cool_project/CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

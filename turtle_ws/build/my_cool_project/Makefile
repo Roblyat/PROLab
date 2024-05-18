@@ -363,6 +363,21 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 my_cool_project/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
 	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 .PHONY : my_cool_project/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
@@ -678,36 +693,6 @@ geometry_msgs_generate_messages_lisp/fast:
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make my_cool_project/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-my_cool_project/CMakeFiles/robotController.dir/rule:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/robotController.dir/rule
-.PHONY : my_cool_project/CMakeFiles/robotController.dir/rule
-
-# Convenience name for target.
-robotController: my_cool_project/CMakeFiles/robotController.dir/rule
-
-.PHONY : robotController
-
-# fast build rule for target.
-robotController/fast:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/robotController.dir/build.make my_cool_project/CMakeFiles/robotController.dir/build
-.PHONY : robotController/fast
-
-# Convenience name for target.
 my_cool_project/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 .PHONY : my_cool_project/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
@@ -873,21 +858,6 @@ roscpp_generate_messages_py/fast:
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
-my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
 my_cool_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
 	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : my_cool_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule
@@ -977,32 +947,89 @@ my_cool_project_gencfg/fast:
 	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build.make my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build
 .PHONY : my_cool_project_gencfg/fast
 
-src/robotController.o: src/robotController.cpp.o
+# Convenience name for target.
+my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
-.PHONY : src/robotController.o
+# Convenience name for target.
+actionlib_generate_messages_nodejs: my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_generate_messages_nodejs/fast:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make my_cool_project/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
+
+# Convenience name for target.
+my_cool_project/CMakeFiles/main.dir/rule:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_cool_project/CMakeFiles/main.dir/rule
+.PHONY : my_cool_project/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: my_cool_project/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+src/controller.o: src/controller.cpp.o
+
+.PHONY : src/controller.o
 
 # target to build an object file
-src/robotController.cpp.o:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/robotController.dir/build.make my_cool_project/CMakeFiles/robotController.dir/src/robotController.cpp.o
-.PHONY : src/robotController.cpp.o
+src/controller.cpp.o:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/src/controller.cpp.o
+.PHONY : src/controller.cpp.o
 
-src/robotController.i: src/robotController.cpp.i
+src/controller.i: src/controller.cpp.i
 
-.PHONY : src/robotController.i
+.PHONY : src/controller.i
 
 # target to preprocess a source file
-src/robotController.cpp.i:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/robotController.dir/build.make my_cool_project/CMakeFiles/robotController.dir/src/robotController.cpp.i
-.PHONY : src/robotController.cpp.i
+src/controller.cpp.i:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/src/controller.cpp.i
+.PHONY : src/controller.cpp.i
 
-src/robotController.s: src/robotController.cpp.s
+src/controller.s: src/controller.cpp.s
 
-.PHONY : src/robotController.s
+.PHONY : src/controller.s
 
 # target to generate assembly for a file
-src/robotController.cpp.s:
-	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/robotController.dir/build.make my_cool_project/CMakeFiles/robotController.dir/src/robotController.cpp.s
-.PHONY : src/robotController.cpp.s
+src/controller.cpp.s:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/src/controller.cpp.s
+.PHONY : src/controller.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/robat/.localgit/PROLab/turtle_ws/build && $(MAKE) -f my_cool_project/CMakeFiles/main.dir/build.make my_cool_project/CMakeFiles/main.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -1024,6 +1051,7 @@ help:
 	@echo "... dynamic_reconfigure_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -1046,8 +1074,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... robotController"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
@@ -1060,7 +1086,6 @@ help:
 	@echo "... install/strip"
 	@echo "... move_base_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_py"
-	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -1069,11 +1094,16 @@ help:
 	@echo "... test"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... my_cool_project_gencfg"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... main"
 	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... src/robotController.o"
-	@echo "... src/robotController.i"
-	@echo "... src/robotController.s"
+	@echo "... src/controller.o"
+	@echo "... src/controller.i"
+	@echo "... src/controller.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

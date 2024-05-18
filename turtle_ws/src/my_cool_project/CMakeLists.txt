@@ -208,6 +208,6 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(robotController src/robotController.cpp)
-target_link_libraries(robotController ${catkin_LIBRARIES})
-add_dependencies(robotController ${PROJECT_NAME}_gencfg)
+add_executable(main src/main.cpp src/controller.cpp)
+target_link_libraries(main ${catkin_LIBRARIES})
+add_dependencies(main ${PROJECT_NAME}_gencfg)
