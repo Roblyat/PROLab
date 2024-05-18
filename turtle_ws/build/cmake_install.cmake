@@ -131,7 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/robat/.localgit/PROLab/turtle_ws/build/gtest/cmake_install.cmake")
-  include("/home/robat/.localgit/PROLab/turtle_ws/build/turtle/cmake_install.cmake")
+  include("/home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project/cmake_install.cmake")
 
 endif()
 

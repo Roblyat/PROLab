@@ -1,0 +1,12 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~k_rho" : \b [double] double_param min: -2.0, default: 0.025, max: 2.0
+- \b "~k_beta" : \b [double] double_param min: -2.0, default: -0.0125, max: 2.0
+- \b "~k_alpha" : \b [double] double_param min: -2.0, default: 0.03, max: 2.0
+- \b "~goal_x" : \b [double] double_param min: -20.0, default: 0.0, max: 20.0
+- \b "~goal_y" : \b [double] double_param min: -20.0, default: 0.0, max: 20.0
+- \b "~goal_theta" : \b [double] double_param min: -180.0, default: 0.0, max: 180.0
+- \b "~start" : \b [bool] bool_param min: False, default: False, max: True
+

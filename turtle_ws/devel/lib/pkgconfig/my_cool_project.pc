@@ -1,0 +1,8 @@
+prefix=/home/robat/.localgit/PROLab/turtle_ws/devel
+
+Name: my_cool_project
+Description: Description of my_cool_project
+Version: 0.0.0
+Cflags: -I/home/robat/.localgit/PROLab/turtle_ws/devel/include
+Libs: -L${prefix}/lib -lturtle
+Requires: nav_msgs roscpp rospy sensor_msgs std_msgs dynamic_reconfigure
