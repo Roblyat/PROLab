@@ -38,10 +38,10 @@
   "d41d8cd98f00b204e9800998ecf8427e")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<WorldFrame>)))
   "Returns full string definition for message of type '<WorldFrame>"
-  (cl:format cl:nil "~%~%~%"))
+  (cl:format cl:nil "~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'WorldFrame)))
   "Returns full string definition for message of type 'WorldFrame"
-  (cl:format cl:nil "~%~%~%"))
+  (cl:format cl:nil "~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <WorldFrame>))
   (cl:+ 0
 ))

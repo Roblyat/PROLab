@@ -53,34 +53,34 @@ CMAKE_BINARY_DIR = /home/robat/.localgit/PROLab/turtle_ws/build
 # Include the progress variables for this target.
 include my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/progress.make
 
-my_cool_project/CMakeFiles/my_cool_project_gencfg: /home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h
-my_cool_project/CMakeFiles/my_cool_project_gencfg: /home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py
+my_cool_project/CMakeFiles/my_cool_project_gencfg: devel/include/my_cool_project/reconfigureConfig.h
+my_cool_project/CMakeFiles/my_cool_project_gencfg: devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py
 
 
-/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h: /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/cfg/reconfigure.cfg
-/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h: /opt/ros/noetic/share/dynamic_reconfigure/templates/ConfigType.py.template
-/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h: /opt/ros/noetic/share/dynamic_reconfigure/templates/ConfigType.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/reconfigure.cfg: /home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h /home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py"
-	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && ../catkin_generated/env_cached.sh /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project/setup_custom_pythonpath.sh /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/cfg/reconfigure.cfg /opt/ros/noetic/share/dynamic_reconfigure/cmake/.. /home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project /home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project /home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project
+devel/include/my_cool_project/reconfigureConfig.h: /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/cfg/reconfigure.cfg
+devel/include/my_cool_project/reconfigureConfig.h: /opt/ros/noetic/share/dynamic_reconfigure/templates/ConfigType.py.template
+devel/include/my_cool_project/reconfigureConfig.h: /opt/ros/noetic/share/dynamic_reconfigure/templates/ConfigType.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/reconfigure.cfg: /home/robat/.localgit/PROLab/turtle_ws/build/devel/include/my_cool_project/reconfigureConfig.h /home/robat/.localgit/PROLab/turtle_ws/build/devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py"
+	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && ../catkin_generated/env_cached.sh /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project/setup_custom_pythonpath.sh /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/cfg/reconfigure.cfg /opt/ros/noetic/share/dynamic_reconfigure/cmake/.. /home/robat/.localgit/PROLab/turtle_ws/build/devel/share/my_cool_project /home/robat/.localgit/PROLab/turtle_ws/build/devel/include/my_cool_project /home/robat/.localgit/PROLab/turtle_ws/build/devel/lib/python3/dist-packages/my_cool_project
 
-/home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig.dox: /home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig.dox
+devel/share/my_cool_project/docs/reconfigureConfig.dox: devel/include/my_cool_project/reconfigureConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate devel/share/my_cool_project/docs/reconfigureConfig.dox
 
-/home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig-usage.dox: /home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig-usage.dox
+devel/share/my_cool_project/docs/reconfigureConfig-usage.dox: devel/include/my_cool_project/reconfigureConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate devel/share/my_cool_project/docs/reconfigureConfig-usage.dox
 
-/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py: /home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py
+devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py: devel/include/my_cool_project/reconfigureConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py
 
-/home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig.wikidoc: /home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig.wikidoc
+devel/share/my_cool_project/docs/reconfigureConfig.wikidoc: devel/include/my_cool_project/reconfigureConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate devel/share/my_cool_project/docs/reconfigureConfig.wikidoc
 
 my_cool_project_gencfg: my_cool_project/CMakeFiles/my_cool_project_gencfg
-my_cool_project_gencfg: /home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h
-my_cool_project_gencfg: /home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig.dox
-my_cool_project_gencfg: /home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig-usage.dox
-my_cool_project_gencfg: /home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py
-my_cool_project_gencfg: /home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig.wikidoc
+my_cool_project_gencfg: devel/include/my_cool_project/reconfigureConfig.h
+my_cool_project_gencfg: devel/share/my_cool_project/docs/reconfigureConfig.dox
+my_cool_project_gencfg: devel/share/my_cool_project/docs/reconfigureConfig-usage.dox
+my_cool_project_gencfg: devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py
+my_cool_project_gencfg: devel/share/my_cool_project/docs/reconfigureConfig.wikidoc
 my_cool_project_gencfg: my_cool_project/CMakeFiles/my_cool_project_gencfg.dir/build.make
 
 .PHONY : my_cool_project_gencfg

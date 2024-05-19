@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h"
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py"
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig-usage.dox"
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig.dox"
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/share/my_cool_project/docs/reconfigureConfig.wikidoc"
+  "../devel/include/my_cool_project/reconfigureConfig.h"
+  "../devel/lib/python3/dist-packages/my_cool_project/cfg/reconfigureConfig.py"
+  "../devel/share/my_cool_project/docs/reconfigureConfig-usage.dox"
+  "../devel/share/my_cool_project/docs/reconfigureConfig.dox"
+  "../devel/share/my_cool_project/docs/reconfigureConfig.wikidoc"
   "CMakeFiles/my_cool_project_gencfg"
 )
 

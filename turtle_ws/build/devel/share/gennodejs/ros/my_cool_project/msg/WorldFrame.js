@@ -53,7 +53,6 @@ class WorldFrame {
     // Returns full string definition for message
     return `
     
-    
     `;
   }
 

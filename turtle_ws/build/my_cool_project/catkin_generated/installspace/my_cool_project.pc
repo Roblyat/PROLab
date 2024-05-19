@@ -1,4 +1,4 @@
-prefix=/home/robat/.localgit/PROLab/turtle_ws/install
+prefix=/usr/local
 
 Name: my_cool_project
 Description: Description of my_cool_project

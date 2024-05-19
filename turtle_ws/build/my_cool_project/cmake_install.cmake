@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/robat/.localgit/PROLab/turtle_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -46,43 +46,43 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/build/devel/include/my_cool_project")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/build/devel/share/roseus/ros/my_cool_project")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/devel/share/common-lisp/ros/my_cool_project")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/build/devel/share/common-lisp/ros/my_cool_project")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/devel/share/gennodejs/ros/my_cool_project")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/build/devel/share/gennodejs/ros/my_cool_project")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/robat/.localgit/PROLab/turtle_ws/build/devel/lib/python3/dist-packages/my_cool_project")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/build/devel/lib/python3/dist-packages/my_cool_project")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/my_cool_project" TYPE FILE FILES "/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/reconfigureConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/my_cool_project" TYPE FILE FILES "/home/robat/.localgit/PROLab/turtle_ws/build/devel/include/my_cool_project/reconfigureConfig.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/my_cool_project" TYPE FILE FILES "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/my_cool_project" TYPE FILE FILES "/home/robat/.localgit/PROLab/turtle_ws/build/devel/lib/python3/dist-packages/my_cool_project/__init__.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/cfg")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/robat/.localgit/PROLab/turtle_ws/build/devel/lib/python3/dist-packages/my_cool_project/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/my_cool_project" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/my_cool_project" TYPE DIRECTORY FILES "/home/robat/.localgit/PROLab/turtle_ws/build/devel/lib/python3/dist-packages/my_cool_project/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

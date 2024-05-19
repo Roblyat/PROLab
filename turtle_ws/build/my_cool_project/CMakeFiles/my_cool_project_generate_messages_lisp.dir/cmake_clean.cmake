@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/share/common-lisp/ros/my_cool_project/msg/WorldFrame.lisp"
+  "../devel/share/common-lisp/ros/my_cool_project/msg/WorldFrame.lisp"
   "CMakeFiles/my_cool_project_generate_messages_lisp"
 )
 

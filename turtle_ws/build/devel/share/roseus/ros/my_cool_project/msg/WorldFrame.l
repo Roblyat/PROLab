@@ -43,7 +43,6 @@
 (setf (get my_cool_project::WorldFrame :datatype-) "my_cool_project/WorldFrame")
 (setf (get my_cool_project::WorldFrame :definition-)
       "
-
 ")
 
 
