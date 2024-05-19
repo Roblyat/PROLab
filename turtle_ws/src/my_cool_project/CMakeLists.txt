@@ -9,6 +9,7 @@ project(my_cool_project)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   nav_msgs
+  geometry_msgs
   sensor_msgs
   std_msgs
   dynamic_reconfigure 
@@ -16,7 +17,8 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib
   roscpp
   rospy
-)
+  message_generation
+  )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -52,11 +54,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+ add_message_files(
+  FILES
+  WorldFrame.msg
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -73,10 +74,11 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   nav_msgs#   sensor_msgs#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+  geometry_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -108,7 +110,8 @@ generate_dynamic_reconfigure_options(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   LIBRARIES turtle
-  CATKIN_DEPENDS nav_msgs roscpp rospy sensor_msgs std_msgs dynamic_reconfigure actionlib move_base_msgs
+  CATKIN_DEPENDS nav_msgs roscpp rospy sensor_msgs std_msgs dynamic_reconfigure actionlib move_base_msgs geometry_msgs message_runtime
+  #INCLUDE_DIRS include msg
   #DEPENDS system_lib
 )
 
@@ -208,6 +211,10 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(main src/main.cpp src/controller.cpp)
-target_link_libraries(main ${catkin_LIBRARIES})
-add_dependencies(main ${PROJECT_NAME}_gencfg)
+add_executable(ctrl_node src/ctrl_node.cpp include/Controller.cpp)
+target_link_libraries(ctrl_node ${catkin_LIBRARIES})
+add_dependencies(ctrl_node ${PROJECT_NAME}_gencfg)
+
+add_executable(kf_node src/kf_node.cpp include/KalmanFilter.cpp)
+target_link_libraries(kf_node ${catkin_LIBRARIES})
+add_dependencies(kf_node ${PROJECT_NAME}_gencfg)

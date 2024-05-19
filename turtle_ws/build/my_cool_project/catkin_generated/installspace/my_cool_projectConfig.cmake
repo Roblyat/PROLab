@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(my_cool_project_EXPORTED_TARGETS "my_cool_project_gencfg")
+set(my_cool_project_EXPORTED_TARGETS "my_cool_project_generate_messages_cpp;my_cool_project_generate_messages_eus;my_cool_project_generate_messages_lisp;my_cool_project_generate_messages_nodejs;my_cool_project_generate_messages_py;my_cool_project_gencfg")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${my_cool_project_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${my_cool_project_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "nav_msgs;roscpp;rospy;sensor_msgs;std_msgs;dynamic_reconfigure;actionlib;move_base_msgs")
+set(depends "nav_msgs;roscpp;rospy;sensor_msgs;std_msgs;dynamic_reconfigure;actionlib;move_base_msgs;geometry_msgs;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   _list_append_deduplicate(my_cool_project_EXPORTED_TARGETS ${${my_cool_project_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "my_cool_project-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${my_cool_project_DIR}/${extra})

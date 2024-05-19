@@ -3,7 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
-                "/opt/ros/noetic/share/**"
+                "/opt/ros/noetic/include/**",
+                "${workspaceFolder}/turtle_ws/src/my_cool_project/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
