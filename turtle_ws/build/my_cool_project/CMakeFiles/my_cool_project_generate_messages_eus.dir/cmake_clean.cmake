@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../devel/share/roseus/ros/my_cool_project/manifest.l"
-  "../devel/share/roseus/ros/my_cool_project/msg/WorldFrame.l"
+  "/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/manifest.l"
+  "/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/WorldFrame.l"
   "CMakeFiles/my_cool_project_generate_messages_eus"
 )
 

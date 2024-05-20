@@ -68,13 +68,13 @@ set(my_cool_project_CONFIG_INCLUDED TRUE)
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
   set(my_cool_project_SOURCE_PREFIX /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project)
-  set(my_cool_project_DEVEL_PREFIX /home/robat/.localgit/PROLab/turtle_ws/build/devel)
+  set(my_cool_project_DEVEL_PREFIX /home/robat/.localgit/PROLab/turtle_ws/devel)
   set(my_cool_project_INSTALL_PREFIX "")
   set(my_cool_project_PREFIX ${my_cool_project_DEVEL_PREFIX})
 else()
   set(my_cool_project_SOURCE_PREFIX "")
   set(my_cool_project_DEVEL_PREFIX "")
-  set(my_cool_project_INSTALL_PREFIX /usr/local)
+  set(my_cool_project_INSTALL_PREFIX /home/robat/.localgit/PROLab/turtle_ws/install)
   set(my_cool_project_PREFIX ${my_cool_project_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /usr/local/lib;/home/robat/.localgit/PROLab/turtle_ws/devel/lib;/home/robat/universal_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/robat/.localgit/PROLab/turtle_ws/install/lib;/home/robat/.localgit/PROLab/turtle_ws/devel/lib;/home/robat/universal_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
