@@ -4,11 +4,10 @@
 
 KalmanFilter::KalmanFilter(ros::NodeHandle &N) : nh(N)
 {
-
   // ROS_INFO_STREAM("Init KlammanFilter");
   //  subscribe to the topic /odom
   odom_sub = nh.subscribe("/odom", 1, &KalmanFilter::odomCallback, this);
-
+  prediction_pub = nh.advertise<geometry_msgs::Pose2D>("/prediction", 1);
   // KalmanFilter
   //  Initialize state and covariance
   mu_t = Eigen::VectorXd(3);
@@ -18,9 +17,6 @@ KalmanFilter::KalmanFilter(ros::NodeHandle &N) : nh(N)
   // Initialize models (example values, you should set these according to your system)
   A_t = Eigen::MatrixXd::Identity(3, 3);
   B_t = Eigen::MatrixXd(3, 2);
-  // B_t << rate * cos(odom.twist.twist.angular.z * rate), 0,
-  //        rate * sin(odom.twist.twist.angular.z * rate), 0,
-  //        0, rate;
 
   R_t = 0.01 * Eigen::MatrixXd::Identity(3, 3);
   C_t = Eigen::MatrixXd::Identity(3, 3);
@@ -44,7 +40,13 @@ void KalmanFilter::predict()
 
   Sigma_t = A_t * Sigma_t * A_t.transpose() + R_t;
 
-  ROS_INFO("Predict mu_t: %.2f %.2f %.2f", mu_t(0), mu_t(1), mu_t(2));
+  prediction.x = mu_t(0);
+  prediction.y = mu_t(1);
+  prediction.theta = mu_t(2);
+
+  prediction_pub.publish(prediction);
+
+  // ROS_INFO("Predict mu_t: %.2f %.2f %.2f", mu_t(0), mu_t(1), mu_t(2));
 }
 
 // subscribe to the topic /odom

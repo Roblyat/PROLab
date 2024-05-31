@@ -21,9 +21,11 @@ public:
 private:
     //subscribe to the topic /odom
     ros::Subscriber odom_sub;
+    ros::Publisher prediction_pub;
     nav_msgs::Odometry odom;
     geometry_msgs::Pose2D poseWorld;
     geometry_msgs::Twist twistWorld;
+    geometry_msgs::Pose2D prediction;
     //my_cool_project::worldFrame world_frame;
     Eigen::VectorXd u;
     ros::NodeHandle nh;

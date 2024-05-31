@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 
   ros::init(argc, argv, "controller_node");
   ros::NodeHandle n;
-  ros::Rate loop_rate(10);
+  ros::Rate loop_rate(30);
 
   Controller controller(n);
 

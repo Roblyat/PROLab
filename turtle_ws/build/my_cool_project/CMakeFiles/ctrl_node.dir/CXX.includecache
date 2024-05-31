@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/Controller.cpp
-../include/Controller.h
-/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/Controller.h
-
 /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/Controller.h
 ros/ros.h
 -
