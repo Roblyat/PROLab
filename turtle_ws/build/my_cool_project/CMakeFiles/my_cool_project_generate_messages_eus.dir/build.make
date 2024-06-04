@@ -53,21 +53,24 @@ CMAKE_BINARY_DIR = /home/robat/.localgit/PROLab/turtle_ws/build
 # Include the progress variables for this target.
 include my_cool_project/CMakeFiles/my_cool_project_generate_messages_eus.dir/progress.make
 
-my_cool_project/CMakeFiles/my_cool_project_generate_messages_eus: /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/WorldFrame.l
+my_cool_project/CMakeFiles/my_cool_project_generate_messages_eus: /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/custom.l
 my_cool_project/CMakeFiles/my_cool_project_generate_messages_eus: /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/manifest.l
 
 
-/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/WorldFrame.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/WorldFrame.l: /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/msg/WorldFrame.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from my_cool_project/WorldFrame.msg"
-	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/msg/WorldFrame.msg -Imy_cool_project:/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p my_cool_project -o /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg
+/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/custom.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/custom.l: /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/msg/custom.msg
+/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/custom.l: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/custom.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose2D.msg
+/home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/custom.l: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from my_cool_project/custom.msg"
+	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/msg/custom.msg -Imy_cool_project:/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p my_cool_project -o /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg
 
 /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for my_cool_project"
-	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project my_cool_project std_msgs geometry_msgs
+	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project my_cool_project geometry_msgs std_msgs
 
 my_cool_project_generate_messages_eus: my_cool_project/CMakeFiles/my_cool_project_generate_messages_eus
-my_cool_project_generate_messages_eus: /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/WorldFrame.l
+my_cool_project_generate_messages_eus: /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/msg/custom.l
 my_cool_project_generate_messages_eus: /home/robat/.localgit/PROLab/turtle_ws/devel/share/roseus/ros/my_cool_project/manifest.l
 my_cool_project_generate_messages_eus: my_cool_project/CMakeFiles/my_cool_project_generate_messages_eus.dir/build.make
 

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/share/gennodejs/ros/my_cool_project/msg/WorldFrame.js"
+  "/home/robat/.localgit/PROLab/turtle_ws/devel/share/gennodejs/ros/my_cool_project/msg/custom.js"
   "CMakeFiles/my_cool_project_generate_messages_nodejs"
 )
 

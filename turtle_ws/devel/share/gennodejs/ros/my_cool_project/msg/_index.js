@@ -1,8 +1,8 @@
 
 "use strict";
 
-let WorldFrame = require('./WorldFrame.js');
+let custom = require('./custom.js');
 
 module.exports = {
-  WorldFrame: WorldFrame,
+  custom: custom,
 };

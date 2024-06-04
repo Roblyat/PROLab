@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/msg/_WorldFrame.py"
   "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/msg/__init__.py"
+  "/home/robat/.localgit/PROLab/turtle_ws/devel/lib/python3/dist-packages/my_cool_project/msg/_custom.py"
   "CMakeFiles/my_cool_project_generate_messages_py"
 )
 

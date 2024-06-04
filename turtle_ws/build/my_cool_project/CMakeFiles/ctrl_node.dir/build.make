@@ -70,29 +70,29 @@ my_cool_project/CMakeFiles/ctrl_node.dir/src/ctrl_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ctrl_node.dir/src/ctrl_node.cpp.s"
 	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/src/ctrl_node.cpp -o CMakeFiles/ctrl_node.dir/src/ctrl_node.cpp.s
 
-my_cool_project/CMakeFiles/ctrl_node.dir/include/Controller.cpp.o: my_cool_project/CMakeFiles/ctrl_node.dir/flags.make
-my_cool_project/CMakeFiles/ctrl_node.dir/include/Controller.cpp.o: /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/Controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object my_cool_project/CMakeFiles/ctrl_node.dir/include/Controller.cpp.o"
-	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ctrl_node.dir/include/Controller.cpp.o -c /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/Controller.cpp
+my_cool_project/CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.o: my_cool_project/CMakeFiles/ctrl_node.dir/flags.make
+my_cool_project/CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.o: /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project/Controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robat/.localgit/PROLab/turtle_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object my_cool_project/CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.o"
+	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.o -c /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project/Controller.cpp
 
-my_cool_project/CMakeFiles/ctrl_node.dir/include/Controller.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ctrl_node.dir/include/Controller.cpp.i"
-	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/Controller.cpp > CMakeFiles/ctrl_node.dir/include/Controller.cpp.i
+my_cool_project/CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.i"
+	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project/Controller.cpp > CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.i
 
-my_cool_project/CMakeFiles/ctrl_node.dir/include/Controller.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ctrl_node.dir/include/Controller.cpp.s"
-	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/Controller.cpp -o CMakeFiles/ctrl_node.dir/include/Controller.cpp.s
+my_cool_project/CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.s"
+	cd /home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project/Controller.cpp -o CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.s
 
 # Object files for target ctrl_node
 ctrl_node_OBJECTS = \
 "CMakeFiles/ctrl_node.dir/src/ctrl_node.cpp.o" \
-"CMakeFiles/ctrl_node.dir/include/Controller.cpp.o"
+"CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.o"
 
 # External object files for target ctrl_node
 ctrl_node_EXTERNAL_OBJECTS =
 
 /home/robat/.localgit/PROLab/turtle_ws/devel/lib/my_cool_project/ctrl_node: my_cool_project/CMakeFiles/ctrl_node.dir/src/ctrl_node.cpp.o
-/home/robat/.localgit/PROLab/turtle_ws/devel/lib/my_cool_project/ctrl_node: my_cool_project/CMakeFiles/ctrl_node.dir/include/Controller.cpp.o
+/home/robat/.localgit/PROLab/turtle_ws/devel/lib/my_cool_project/ctrl_node: my_cool_project/CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.o
 /home/robat/.localgit/PROLab/turtle_ws/devel/lib/my_cool_project/ctrl_node: my_cool_project/CMakeFiles/ctrl_node.dir/build.make
 /home/robat/.localgit/PROLab/turtle_ws/devel/lib/my_cool_project/ctrl_node: /opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so
 /home/robat/.localgit/PROLab/turtle_ws/devel/lib/my_cool_project/ctrl_node: /opt/ros/noetic/lib/libactionlib.so

@@ -1,5 +1,5 @@
 // kf_node.cpp
-#include "../include/KalmanFilter.h"
+#include "KalmanFilter.h"
 #include <iostream>
 
 int main(int argc, char **argv)

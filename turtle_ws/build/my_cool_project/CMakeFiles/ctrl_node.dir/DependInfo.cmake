@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/Controller.cpp" "/home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project/CMakeFiles/ctrl_node.dir/include/Controller.cpp.o"
+  "/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project/Controller.cpp" "/home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project/CMakeFiles/ctrl_node.dir/include/my_cool_project/Controller.cpp.o"
   "/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/src/ctrl_node.cpp" "/home/robat/.localgit/PROLab/turtle_ws/build/my_cool_project/CMakeFiles/ctrl_node.dir/src/ctrl_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -21,6 +21,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/robat/.localgit/PROLab/turtle_ws/devel/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project"
   )
 
 # Targets to which this target links.

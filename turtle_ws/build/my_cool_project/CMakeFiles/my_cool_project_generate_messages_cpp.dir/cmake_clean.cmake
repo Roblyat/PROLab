@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/WorldFrame.h"
+  "/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/custom.h"
   "CMakeFiles/my_cool_project_generate_messages_cpp"
 )
 

@@ -1,5 +1,5 @@
 // main.cpp
-#include "../include/Controller.h"
+#include "Controller.h"
 #include <iostream>
 
 int main(int argc, char **argv)
