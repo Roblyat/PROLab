@@ -5,6 +5,7 @@
             "includePath": [
                 "/opt/ros/noetic/include/**",
                 "${workspaceFolder}/turtle_ws/src/my_cool_project/include",
+                "${workspaceFolder}/turtle_ws/src/my_cool_project/include/my_cool_project",
                 "${workspaceFolder}/turtle_ws/src/my_cool_project/msg",
                 "${workspaceFolder}/turtle_ws/devel/include"
             ],

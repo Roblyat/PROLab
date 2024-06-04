@@ -1,6 +1,6 @@
 // kf_node.cpp
-#include "KalmanFilter.h"
 #include <iostream>
+#include "../include/my_cool_project/KalmanFilter.h"
 
 int main(int argc, char **argv)
 {

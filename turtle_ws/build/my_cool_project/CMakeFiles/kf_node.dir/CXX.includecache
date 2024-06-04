@@ -6,26 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/robat/.localgit/PROLab/turtle_ws/devel/include/my_cool_project/custom.h
-string
--
-vector
--
-memory
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-geometry_msgs/Pose2D.h
--
-geometry_msgs/Twist.h
--
-
 /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project/KalmanFilter.cpp
 iostream
 -
@@ -47,6 +27,12 @@ ros/ros.h
 -
 my_cool_project/custom.h
 -
+
+/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/src/kf_node.cpp
+iostream
+-
+../include/my_cool_project/KalmanFilter.h
+/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project/KalmanFilter.h
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string

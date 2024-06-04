@@ -7,21 +7,30 @@ KalmanFilter::KalmanFilter(ros::NodeHandle &N) : nh(N)
   // ROS_INFO_STREAM("Init KlammanFilter");
   //  subscribe to the topic /odom
   odom_sub = nh.subscribe("/odom", 1, &KalmanFilter::odomCallback, this);
-  prediction_pub = nh.advertise<geometry_msgs::Pose2D>("/prediction", 1);
-  msg_pub = nh.advertise<my_cool_project::custom>("/worldframe", 1);
+  prediction_pub = nh.advertise<my_cool_project::custom>("/prediction", 1);
   // KalmanFilter
   //  Initialize state and covariance
-  mu_t = Eigen::VectorXd(3);
-  mu_t << 0.5, 0.5, 0; // Initialize start state
-  Sigma_t = Eigen::MatrixXd::Identity(3, 3);
+  mu_t = Eigen::VectorXd(6);
+  prediction.pose.x = 0.5;
+  prediction.pose.y = 0.5;
+  prediction.pose.theta = 0.0;
+  prediction.velocity.linear.x = 0.0;
+  prediction.velocity.linear.y = 0.0;
+  prediction.velocity.angular.z = 0.0;
+  mu_t << 0.5, 0.5, 0.0, 0.0, 0.0, 0.0; // Initialize start state
+  Sigma_t = Eigen::MatrixXd::Identity(6, 6);
 
   // Initialize models (example values, you should set these according to your system)
-  A_t = Eigen::MatrixXd::Identity(3, 3);
-  B_t = Eigen::MatrixXd(3, 2);
+  A_t = Eigen::MatrixXd::Identity(6, 6);
+  // Update A_t with the time dependency for the velocity components
+  A_t(0, 3) = dt; // x depends on v_x
+  A_t(1, 4) = dt; // y depends on v_y
+  A_t(2, 5) = dt; // theta depends on omega
+  B_t = Eigen::MatrixXd(6, 2);
 
-  R_t = 0.01 * Eigen::MatrixXd::Identity(3, 3);
-  C_t = Eigen::MatrixXd::Identity(3, 3);
-  Q_t = 0.1 * Eigen::MatrixXd::Identity(3, 3);
+  R_t = 0.01 * Eigen::MatrixXd::Identity(6, 6);
+  C_t = Eigen::MatrixXd::Identity(6, 6);
+  Q_t = 0.1 * Eigen::MatrixXd::Identity(6, 6);
 }
 
 void KalmanFilter::predict()
@@ -33,25 +42,25 @@ void KalmanFilter::predict()
   theta_new = normalizeAngle(theta + u(1) * dt);
 
   //update B_t
-  B_t << dt * cos(theta_new), 0,
-        dt * sin(theta_new), 0,
-        0, dt;
+  B_t << dt * cos(mu_t(2)), 0,
+        dt * sin(mu_t(2)), 0,
+        0, dt,
+        1, 0,
+        0, 1,
+        0, 0;
 
   mu_t = A_t * mu_t + B_t * u;
 
   Sigma_t = A_t * Sigma_t * A_t.transpose() + R_t;
 
-  prediction.x = mu_t(0);
-  prediction.y = mu_t(1);
-  prediction.theta = mu_t(2);
+  prediction.pose.x = mu_t(0);
+  prediction.pose.y = mu_t(1);
+  prediction.pose.theta = mu_t(2);
+  prediction.velocity.linear.x = mu_t(3);
+  prediction.velocity.linear.y = mu_t(4);
+  prediction.velocity.angular.z = mu_t(5);
 
   prediction_pub.publish(prediction);
-
-  my_cool_project::custom msg;
-  msg.pose = prediction;
-
-  msg_pub.publish(msg);
-
   // ROS_INFO("Predict mu_t: %.2f %.2f %.2f", mu_t(0), mu_t(1), mu_t(2));
 }
 

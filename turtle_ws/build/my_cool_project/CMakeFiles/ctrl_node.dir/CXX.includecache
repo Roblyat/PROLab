@@ -19,8 +19,8 @@ actionlib/client/simple_action_client.h
 -
 
 /home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/src/ctrl_node.cpp
-Controller.h
-/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/src/Controller.h
+../include/my_cool_project/Controller.h
+/home/robat/.localgit/PROLab/turtle_ws/src/my_cool_project/include/my_cool_project/Controller.h
 iostream
 -
 

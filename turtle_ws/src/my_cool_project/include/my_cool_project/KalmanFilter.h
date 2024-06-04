@@ -17,17 +17,14 @@ public:
     void clcWorldFrame();
     Eigen::VectorXd getState() const;
 
-
 private:
     //subscribe to the topic /odom
     ros::Subscriber odom_sub;
     ros::Publisher prediction_pub;
-    ros::Publisher msg_pub;
     nav_msgs::Odometry odom;
     geometry_msgs::Pose2D poseWorld;
     geometry_msgs::Twist twistWorld;
-    geometry_msgs::Pose2D prediction;
-    //my_cool_project::worldFrame world_frame;
+    my_cool_project::custom prediction;
     Eigen::VectorXd u;
     ros::NodeHandle nh;
     ros::Time last_time_;
