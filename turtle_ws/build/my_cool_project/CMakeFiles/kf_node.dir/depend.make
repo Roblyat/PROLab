@@ -8,6 +8,7 @@ my_cool_project/CMakeFiles/kf_node.dir/include/my_cool_project/KalmanFilter.cpp.
 my_cool_project/CMakeFiles/kf_node.dir/include/my_cool_project/KalmanFilter.cpp.o: /opt/ros/noetic/include/geometry_msgs/Pose.h
 my_cool_project/CMakeFiles/kf_node.dir/include/my_cool_project/KalmanFilter.cpp.o: /opt/ros/noetic/include/geometry_msgs/Pose2D.h
 my_cool_project/CMakeFiles/kf_node.dir/include/my_cool_project/KalmanFilter.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseWithCovariance.h
+my_cool_project/CMakeFiles/kf_node.dir/include/my_cool_project/KalmanFilter.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 my_cool_project/CMakeFiles/kf_node.dir/include/my_cool_project/KalmanFilter.cpp.o: /opt/ros/noetic/include/geometry_msgs/Quaternion.h
 my_cool_project/CMakeFiles/kf_node.dir/include/my_cool_project/KalmanFilter.cpp.o: /opt/ros/noetic/include/geometry_msgs/Twist.h
 my_cool_project/CMakeFiles/kf_node.dir/include/my_cool_project/KalmanFilter.cpp.o: /opt/ros/noetic/include/geometry_msgs/TwistWithCovariance.h
@@ -86,6 +87,7 @@ my_cool_project/CMakeFiles/kf_node.dir/src/kf_node.cpp.o: /opt/ros/noetic/includ
 my_cool_project/CMakeFiles/kf_node.dir/src/kf_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/Pose.h
 my_cool_project/CMakeFiles/kf_node.dir/src/kf_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/Pose2D.h
 my_cool_project/CMakeFiles/kf_node.dir/src/kf_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseWithCovariance.h
+my_cool_project/CMakeFiles/kf_node.dir/src/kf_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 my_cool_project/CMakeFiles/kf_node.dir/src/kf_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/Quaternion.h
 my_cool_project/CMakeFiles/kf_node.dir/src/kf_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/Twist.h
 my_cool_project/CMakeFiles/kf_node.dir/src/kf_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/TwistWithCovariance.h

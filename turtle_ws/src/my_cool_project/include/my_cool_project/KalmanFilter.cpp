@@ -8,17 +8,12 @@ KalmanFilter::KalmanFilter(ros::NodeHandle &N) : nh(N)
   //  subscribe to the topic /odom
   odom_sub = nh.subscribe("/odom", 1, &KalmanFilter::odomCallback, this);
   prediction_pub = nh.advertise<my_cool_project::custom>("/prediction", 1);
+  covPose_pub = nh.advertise<geometry_msgs::PoseWithCovarianceStamped>("/covPose", 1);
   // KalmanFilter
   //  Initialize state and covariance
   mu_t = Eigen::VectorXd(6);
-  // prediction.pose.x = 0.5;
-  // prediction.pose.y = 0.5;
-  // prediction.pose.theta = 0.0;
-  // prediction.velocity.linear.x = 0.0;
-  // prediction.velocity.linear.y = 0.0;
-  // prediction.velocity.angular.z = 0.0;
   prediction.covariance = {0};
-  mu_t << 0.5, 0.5, 0.0, 0.0, 0.0, 0.0; // Initialize start state
+  mu_t << 0.5, 0.5, 0.0, 0.0, 0.0, 0.0; // Initialize start state //YAML PARAMSERVER
   Sigma_t = Eigen::MatrixXd::Identity(6, 6);
 
   // Initialize models (example values, you should set these according to your system)
@@ -41,16 +36,17 @@ void KalmanFilter::predict()
   // ROS_INFO("Predict u: %.2f %.2f", u(0), u(1));
 
   //update B_t
-  B_t << dt * cos(mu_t(2)), 0,
-         dt * sin(mu_t(2)), 0,
-         0,                 dt,
-         cos(mu_t(2)),      0,
-         sin(mu_t(2)),      0,
-         0,                 1;
+  B_t << dt * cos(mu_t(2)),   0,
+         dt * sin(mu_t(2)),   0,
+         0,                   dt,
+         cos(mu_t(2)),        0,
+         sin(mu_t(2)),        0,
+         0,                   1;
 
   mu_t(3) = 0;
   mu_t(4) = 0;
   mu_t(5) = 0;
+
   mu_t = A_t * mu_t + B_t * u;
 
   Sigma_t = A_t * Sigma_t * A_t.transpose() + R_t;
@@ -63,30 +59,50 @@ void KalmanFilter::predict()
   prediction.velocity.angular.z = mu_t(5);
   
   for(int i = 0; i < 6; i++)
-  {
+  { 
     for(int j = 0; j < 6; j++)
     {
       prediction.covariance[i * 6 + j] = Sigma_t(i, j);
     }
   }
 
+  double roll, pitch, yaw;
+  roll, pitch = 0;
+  yaw = prediction.pose.theta;
+
+  eulerToQuaternion(roll, pitch, yaw);
+
+  covePose.pose.pose.position.x = prediction.pose.x;
+  covePose.pose.pose.position.y = prediction.pose.y;
+  covePose.pose.pose.orientation.x = q.x();
+  covePose.pose.pose.orientation.y = q.y();
+  covePose.pose.pose.orientation.z = q.z();
+  covePose.pose.pose.orientation.w = q.w();
+
+  std::fill(covePose.pose.covariance.begin(), covePose.pose.covariance.end(), 0.0);
+
+  // Set the specific covariance values
+  covePose.pose.covariance[0] = prediction.covariance[0];
+  covePose.pose.covariance[7] = prediction.covariance[7];
+  covePose.pose.covariance[35] = prediction.covariance[35];
+
   prediction_pub.publish(prediction);
-  // ROS_INFO("Predict mu_t: %.2f %.2f %.2f", mu_t(0), mu_t(1), mu_t(2));
-}
+  covPose_pub.publish(covePose);
+  ROS_INFO("Predict mu_t: %.2f %.2f %.2f %.2f %.2f %.2f", mu_t(0), mu_t(1), mu_t(2), mu_t(3), mu_t(4), mu_t(5));
+  ROS_INFO("Predict Sigma_t: %.2f %.2f %.2f %.2f %.2f %.2f", Sigma_t(0, 0), Sigma_t(1, 1), Sigma_t(2, 2), Sigma_t(3, 3), Sigma_t(4, 4), Sigma_t(5, 5));
+  }
 
 // subscribe to the topic /odom
 void KalmanFilter::odomCallback(const nav_msgs::Odometry::ConstPtr &msg)
 {
   odom = *msg;
+  covePose.header = odom.header;
   ros::Time current_time = ros::Time::now();
   dt = 0;
   if (last_time_.isValid())
   {
     dt = (current_time - last_time_).toSec();
     // ROS_INFO("Current publish rate: %.2f Hz", dt);
-    // ROS_INFO("Odometry linear velocity x: %.2f", odom.twist.twist.linear.x);
-    // ROS_INFO("Odometry linear velocity y: %.2f", odom.twist.twist.linear.y);
-    // ROS_INFO("Odometry angular velocity z: %.2f", odom.twist.twist.angular.z);
   }
   last_time_ = current_time;
 };
@@ -95,6 +111,12 @@ double KalmanFilter::normalizeAngle(double angle) {
     while (angle > M_PI) angle -= 2.0 * M_PI;
     while (angle < -M_PI) angle += 2.0 * M_PI;
     return angle;
+}
+
+// euler to q
+tf2::Quaternion KalmanFilter::eulerToQuaternion(double roll, double pitch, double yaw) {
+  q.setRPY(roll, pitch, yaw);
+    return q;
 }
 
 void KalmanFilter::update(const Eigen::VectorXd &z)

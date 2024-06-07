@@ -4,13 +4,17 @@
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Pose2D.h>
+#include <geometry_msgs/PoseWithCovarianceStamped.h>
 #include <ros/ros.h>
 #include <my_cool_project/custom.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2/LinearMath/Matrix3x3.h>
 
 class KalmanFilter {
 public:
     KalmanFilter(ros::NodeHandle &N);
     void odomCallback(const nav_msgs::Odometry::ConstPtr &msg);
+    tf2::Quaternion eulerToQuaternion(double roll, double pitch, double yaw);
     void predict();
     void update(const Eigen::VectorXd& z);
     void clcEuler();
@@ -21,9 +25,13 @@ private:
     //subscribe to the topic /odom
     ros::Subscriber odom_sub;
     ros::Publisher prediction_pub;
+    ros::Publisher covPose_pub;
     nav_msgs::Odometry odom;
     geometry_msgs::Pose2D poseWorld;
     geometry_msgs::Twist twistWorld;
+    geometry_msgs::PoseWithCovarianceStamped covePose;
+    
+    tf2::Quaternion q;
     my_cool_project::custom prediction;
     Eigen::VectorXd u;
     ros::NodeHandle nh;

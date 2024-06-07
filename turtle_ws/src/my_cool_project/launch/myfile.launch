@@ -59,6 +59,6 @@
 
   <!-- roblyat launch controler/KalmanFilter-->
   <!-- <node pkg="my_cool_project" type="ctrl_node" name="turtleController" output="screen" /> -->
-  <node pkg="my_cool_project" type="kf_node" name="KalmanFilter" /> <!-- output="screen" />  -->
+  <node pkg="my_cool_project" type="kf_node" name="KalmanFilter" output="screen" />
 
 </launch>
