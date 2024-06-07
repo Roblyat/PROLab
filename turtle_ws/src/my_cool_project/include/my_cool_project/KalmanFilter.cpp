@@ -11,12 +11,13 @@ KalmanFilter::KalmanFilter(ros::NodeHandle &N) : nh(N)
   // KalmanFilter
   //  Initialize state and covariance
   mu_t = Eigen::VectorXd(6);
-  prediction.pose.x = 0.5;
-  prediction.pose.y = 0.5;
-  prediction.pose.theta = 0.0;
-  prediction.velocity.linear.x = 0.0;
-  prediction.velocity.linear.y = 0.0;
-  prediction.velocity.angular.z = 0.0;
+  // prediction.pose.x = 0.5;
+  // prediction.pose.y = 0.5;
+  // prediction.pose.theta = 0.0;
+  // prediction.velocity.linear.x = 0.0;
+  // prediction.velocity.linear.y = 0.0;
+  // prediction.velocity.angular.z = 0.0;
+  prediction.covariance = {0};
   mu_t << 0.5, 0.5, 0.0, 0.0, 0.0, 0.0; // Initialize start state
   Sigma_t = Eigen::MatrixXd::Identity(6, 6);
 
@@ -38,27 +39,36 @@ void KalmanFilter::predict()
   u = Eigen::VectorXd(2);
   u << odom.twist.twist.linear.x, odom.twist.twist.angular.z;
   // ROS_INFO("Predict u: %.2f %.2f", u(0), u(1));
-  theta = mu_t(2);
-  theta_new = normalizeAngle(theta + u(1) * dt);
 
   //update B_t
   B_t << dt * cos(mu_t(2)), 0,
-        dt * sin(mu_t(2)), 0,
-        0, dt,
-        1, 0,
-        0, 1,
-        0, 0;
+         dt * sin(mu_t(2)), 0,
+         0,                 dt,
+         cos(mu_t(2)),      0,
+         sin(mu_t(2)),      0,
+         0,                 1;
 
+  mu_t(3) = 0;
+  mu_t(4) = 0;
+  mu_t(5) = 0;
   mu_t = A_t * mu_t + B_t * u;
 
   Sigma_t = A_t * Sigma_t * A_t.transpose() + R_t;
 
   prediction.pose.x = mu_t(0);
   prediction.pose.y = mu_t(1);
-  prediction.pose.theta = mu_t(2);
+  prediction.pose.theta = normalizeAngle(mu_t(2));
   prediction.velocity.linear.x = mu_t(3);
   prediction.velocity.linear.y = mu_t(4);
   prediction.velocity.angular.z = mu_t(5);
+  
+  for(int i = 0; i < 6; i++)
+  {
+    for(int j = 0; j < 6; j++)
+    {
+      prediction.covariance[i * 6 + j] = Sigma_t(i, j);
+    }
+  }
 
   prediction_pub.publish(prediction);
   // ROS_INFO("Predict mu_t: %.2f %.2f %.2f", mu_t(0), mu_t(1), mu_t(2));

@@ -16,21 +16,19 @@
 
 (defclass my_cool_project::custom
   :super ros::object
-  :slots (_pose _velocity _covVelocity _covPose ))
+  :slots (_pose _velocity _covariance ))
 
 (defmethod my_cool_project::custom
   (:init
    (&key
     ((:pose __pose) (instance geometry_msgs::Pose2D :init))
     ((:velocity __velocity) (instance geometry_msgs::Twist :init))
-    ((:covVelocity __covVelocity) 0.0)
-    ((:covPose __covPose) 0.0)
+    ((:covariance __covariance) (make-array 36 :initial-element 0.0 :element-type :float))
     )
    (send-super :init)
    (setq _pose __pose)
    (setq _velocity __velocity)
-   (setq _covVelocity (float __covVelocity))
-   (setq _covPose (float __covPose))
+   (setq _covariance __covariance)
    self)
   (:pose
    (&rest __pose)
@@ -46,12 +44,9 @@
      (progn
        (if __velocity (setq _velocity (car __velocity)))
        _velocity)))
-  (:covVelocity
-   (&optional __covVelocity)
-   (if __covVelocity (setq _covVelocity __covVelocity)) _covVelocity)
-  (:covPose
-   (&optional __covPose)
-   (if __covPose (setq _covPose __covPose)) _covPose)
+  (:covariance
+   (&optional __covariance)
+   (if __covariance (setq _covariance __covariance)) _covariance)
   (:serialization-length
    ()
    (+
@@ -59,10 +54,8 @@
     (send _pose :serialization-length)
     ;; geometry_msgs/Twist _velocity
     (send _velocity :serialization-length)
-    ;; float64 _covVelocity
-    8
-    ;; float64 _covPose
-    8
+    ;; float64[36] _covariance
+    (* 8    36)
     ))
   (:serialize
    (&optional strm)
@@ -72,10 +65,10 @@
        (send _pose :serialize s)
      ;; geometry_msgs/Twist _velocity
        (send _velocity :serialize s)
-     ;; float64 _covVelocity
-       (sys::poke _covVelocity (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _covPose
-       (sys::poke _covPose (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64[36] _covariance
+     (dotimes (i 36)
+       (sys::poke (elt _covariance i) (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+       )
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -84,21 +77,20 @@
      (send _pose :deserialize buf ptr-) (incf ptr- (send _pose :serialization-length))
    ;; geometry_msgs/Twist _velocity
      (send _velocity :deserialize buf ptr-) (incf ptr- (send _velocity :serialization-length))
-   ;; float64 _covVelocity
-     (setq _covVelocity (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _covPose
-     (setq _covPose (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64[36] _covariance
+   (dotimes (i (length _covariance))
+     (setf (elt _covariance i) (sys::peek buf ptr- :double)) (incf ptr- 8)
+     )
    ;;
    self)
   )
 
-(setf (get my_cool_project::custom :md5sum-) "87669b4932b8fa165d30f2a8d3607b44")
+(setf (get my_cool_project::custom :md5sum-) "8459995fd53fcae095e12638a1f2300c")
 (setf (get my_cool_project::custom :datatype-) "my_cool_project/custom")
 (setf (get my_cool_project::custom :definition-)
       "geometry_msgs/Pose2D pose
 geometry_msgs/Twist velocity
-float64 covVelocity
-float64 covPose
+float64[36] covariance
 ================================================================================
 MSG: geometry_msgs/Pose2D
 # Deprecated
@@ -137,6 +129,6 @@ float64 z
 
 
 
-(provide :my_cool_project/custom "87669b4932b8fa165d30f2a8d3607b44")
+(provide :my_cool_project/custom "8459995fd53fcae095e12638a1f2300c")
 
 

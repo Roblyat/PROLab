@@ -28,16 +28,16 @@ struct custom_
   custom_()
     : pose()
     , velocity()
-    , covVelocity(0.0)
-    , covPose(0.0)  {
-    }
+    , covariance()  {
+      covariance.assign(0.0);
+  }
   custom_(const ContainerAllocator& _alloc)
     : pose(_alloc)
     , velocity(_alloc)
-    , covVelocity(0.0)
-    , covPose(0.0)  {
+    , covariance()  {
   (void)_alloc;
-    }
+      covariance.assign(0.0);
+  }
 
 
 
@@ -47,11 +47,8 @@ struct custom_
    typedef  ::geometry_msgs::Twist_<ContainerAllocator>  _velocity_type;
   _velocity_type velocity;
 
-   typedef double _covVelocity_type;
-  _covVelocity_type covVelocity;
-
-   typedef double _covPose_type;
-  _covPose_type covPose;
+   typedef boost::array<double, 36>  _covariance_type;
+  _covariance_type covariance;
 
 
 
@@ -84,8 +81,7 @@ bool operator==(const ::my_cool_project::custom_<ContainerAllocator1> & lhs, con
 {
   return lhs.pose == rhs.pose &&
     lhs.velocity == rhs.velocity &&
-    lhs.covVelocity == rhs.covVelocity &&
-    lhs.covPose == rhs.covPose;
+    lhs.covariance == rhs.covariance;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -142,12 +138,12 @@ struct MD5Sum< ::my_cool_project::custom_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "87669b4932b8fa165d30f2a8d3607b44";
+    return "8459995fd53fcae095e12638a1f2300c";
   }
 
   static const char* value(const ::my_cool_project::custom_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x87669b4932b8fa16ULL;
-  static const uint64_t static_value2 = 0x5d30f2a8d3607b44ULL;
+  static const uint64_t static_value1 = 0x8459995fd53fcae0ULL;
+  static const uint64_t static_value2 = 0x95e12638a1f2300cULL;
 };
 
 template<class ContainerAllocator>
@@ -168,8 +164,7 @@ struct Definition< ::my_cool_project::custom_<ContainerAllocator> >
   {
     return "geometry_msgs/Pose2D pose\n"
 "geometry_msgs/Twist velocity\n"
-"float64 covVelocity\n"
-"float64 covPose\n"
+"float64[36] covariance\n"
 "================================================================================\n"
 "MSG: geometry_msgs/Pose2D\n"
 "# Deprecated\n"
@@ -224,8 +219,7 @@ namespace serialization
     {
       stream.next(m.pose);
       stream.next(m.velocity);
-      stream.next(m.covVelocity);
-      stream.next(m.covPose);
+      stream.next(m.covariance);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -250,10 +244,12 @@ struct Printer< ::my_cool_project::custom_<ContainerAllocator> >
     s << indent << "velocity: ";
     s << std::endl;
     Printer< ::geometry_msgs::Twist_<ContainerAllocator> >::stream(s, indent + "  ", v.velocity);
-    s << indent << "covVelocity: ";
-    Printer<double>::stream(s, indent + "  ", v.covVelocity);
-    s << indent << "covPose: ";
-    Printer<double>::stream(s, indent + "  ", v.covPose);
+    s << indent << "covariance[]" << std::endl;
+    for (size_t i = 0; i < v.covariance.size(); ++i)
+    {
+      s << indent << "  covariance[" << i << "]: ";
+      Printer<double>::stream(s, indent + "  ", v.covariance[i]);
+    }
   }
 };
 

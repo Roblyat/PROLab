@@ -9,13 +9,12 @@ import struct
 import geometry_msgs.msg
 
 class custom(genpy.Message):
-  _md5sum = "87669b4932b8fa165d30f2a8d3607b44"
+  _md5sum = "8459995fd53fcae095e12638a1f2300c"
   _type = "my_cool_project/custom"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """geometry_msgs/Pose2D pose
 geometry_msgs/Twist velocity
-float64 covVelocity
-float64 covPose
+float64[36] covariance
 ================================================================================
 MSG: geometry_msgs/Pose2D
 # Deprecated
@@ -50,8 +49,8 @@ MSG: geometry_msgs/Vector3
 float64 x
 float64 y
 float64 z"""
-  __slots__ = ['pose','velocity','covVelocity','covPose']
-  _slot_types = ['geometry_msgs/Pose2D','geometry_msgs/Twist','float64','float64']
+  __slots__ = ['pose','velocity','covariance']
+  _slot_types = ['geometry_msgs/Pose2D','geometry_msgs/Twist','float64[36]']
 
   def __init__(self, *args, **kwds):
     """
@@ -61,7 +60,7 @@ float64 z"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       pose,velocity,covVelocity,covPose
+       pose,velocity,covariance
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -74,15 +73,12 @@ float64 z"""
         self.pose = geometry_msgs.msg.Pose2D()
       if self.velocity is None:
         self.velocity = geometry_msgs.msg.Twist()
-      if self.covVelocity is None:
-        self.covVelocity = 0.
-      if self.covPose is None:
-        self.covPose = 0.
+      if self.covariance is None:
+        self.covariance = [0.] * 36
     else:
       self.pose = geometry_msgs.msg.Pose2D()
       self.velocity = geometry_msgs.msg.Twist()
-      self.covVelocity = 0.
-      self.covPose = 0.
+      self.covariance = [0.] * 36
 
   def _get_types(self):
     """
@@ -97,7 +93,8 @@ float64 z"""
     """
     try:
       _x = self
-      buff.write(_get_struct_11d().pack(_x.pose.x, _x.pose.y, _x.pose.theta, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.covVelocity, _x.covPose))
+      buff.write(_get_struct_9d().pack(_x.pose.x, _x.pose.y, _x.pose.theta, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z))
+      buff.write(_get_struct_36d().pack(*self.covariance))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -116,8 +113,11 @@ float64 z"""
       end = 0
       _x = self
       start = end
-      end += 88
-      (_x.pose.x, _x.pose.y, _x.pose.theta, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.covVelocity, _x.covPose,) = _get_struct_11d().unpack(str[start:end])
+      end += 72
+      (_x.pose.x, _x.pose.y, _x.pose.theta, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z,) = _get_struct_9d().unpack(str[start:end])
+      start = end
+      end += 288
+      self.covariance = _get_struct_36d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -131,7 +131,8 @@ float64 z"""
     """
     try:
       _x = self
-      buff.write(_get_struct_11d().pack(_x.pose.x, _x.pose.y, _x.pose.theta, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.covVelocity, _x.covPose))
+      buff.write(_get_struct_9d().pack(_x.pose.x, _x.pose.y, _x.pose.theta, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z))
+      buff.write(self.covariance.tostring())
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -151,8 +152,11 @@ float64 z"""
       end = 0
       _x = self
       start = end
-      end += 88
-      (_x.pose.x, _x.pose.y, _x.pose.theta, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.covVelocity, _x.covPose,) = _get_struct_11d().unpack(str[start:end])
+      end += 72
+      (_x.pose.x, _x.pose.y, _x.pose.theta, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z,) = _get_struct_9d().unpack(str[start:end])
+      start = end
+      end += 288
+      self.covariance = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=36)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -161,9 +165,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_11d = None
-def _get_struct_11d():
-    global _struct_11d
-    if _struct_11d is None:
-        _struct_11d = struct.Struct("<11d")
-    return _struct_11d
+_struct_36d = None
+def _get_struct_36d():
+    global _struct_36d
+    if _struct_36d is None:
+        _struct_36d = struct.Struct("<36d")
+    return _struct_36d
+_struct_9d = None
+def _get_struct_9d():
+    global _struct_9d
+    if _struct_9d is None:
+        _struct_9d = struct.Struct("<9d")
+    return _struct_9d

@@ -21,8 +21,7 @@ class custom {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.pose = null;
       this.velocity = null;
-      this.covVelocity = null;
-      this.covPose = null;
+      this.covariance = null;
     }
     else {
       if (initObj.hasOwnProperty('pose')) {
@@ -37,17 +36,11 @@ class custom {
       else {
         this.velocity = new geometry_msgs.msg.Twist();
       }
-      if (initObj.hasOwnProperty('covVelocity')) {
-        this.covVelocity = initObj.covVelocity
+      if (initObj.hasOwnProperty('covariance')) {
+        this.covariance = initObj.covariance
       }
       else {
-        this.covVelocity = 0.0;
-      }
-      if (initObj.hasOwnProperty('covPose')) {
-        this.covPose = initObj.covPose
-      }
-      else {
-        this.covPose = 0.0;
+        this.covariance = new Array(36).fill(0);
       }
     }
   }
@@ -58,10 +51,12 @@ class custom {
     bufferOffset = geometry_msgs.msg.Pose2D.serialize(obj.pose, buffer, bufferOffset);
     // Serialize message field [velocity]
     bufferOffset = geometry_msgs.msg.Twist.serialize(obj.velocity, buffer, bufferOffset);
-    // Serialize message field [covVelocity]
-    bufferOffset = _serializer.float64(obj.covVelocity, buffer, bufferOffset);
-    // Serialize message field [covPose]
-    bufferOffset = _serializer.float64(obj.covPose, buffer, bufferOffset);
+    // Check that the constant length array field [covariance] has the right length
+    if (obj.covariance.length !== 36) {
+      throw new Error('Unable to serialize array field covariance - length must be 36')
+    }
+    // Serialize message field [covariance]
+    bufferOffset = _arraySerializer.float64(obj.covariance, buffer, bufferOffset, 36);
     return bufferOffset;
   }
 
@@ -73,15 +68,13 @@ class custom {
     data.pose = geometry_msgs.msg.Pose2D.deserialize(buffer, bufferOffset);
     // Deserialize message field [velocity]
     data.velocity = geometry_msgs.msg.Twist.deserialize(buffer, bufferOffset);
-    // Deserialize message field [covVelocity]
-    data.covVelocity = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [covPose]
-    data.covPose = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [covariance]
+    data.covariance = _arrayDeserializer.float64(buffer, bufferOffset, 36)
     return data;
   }
 
   static getMessageSize(object) {
-    return 88;
+    return 360;
   }
 
   static datatype() {
@@ -91,7 +84,7 @@ class custom {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '87669b4932b8fa165d30f2a8d3607b44';
+    return '8459995fd53fcae095e12638a1f2300c';
   }
 
   static messageDefinition() {
@@ -99,8 +92,7 @@ class custom {
     return `
     geometry_msgs/Pose2D pose
     geometry_msgs/Twist velocity
-    float64 covVelocity
-    float64 covPose
+    float64[36] covariance
     ================================================================================
     MSG: geometry_msgs/Pose2D
     # Deprecated
@@ -158,18 +150,11 @@ class custom {
       resolved.velocity = new geometry_msgs.msg.Twist()
     }
 
-    if (msg.covVelocity !== undefined) {
-      resolved.covVelocity = msg.covVelocity;
+    if (msg.covariance !== undefined) {
+      resolved.covariance = msg.covariance;
     }
     else {
-      resolved.covVelocity = 0.0
-    }
-
-    if (msg.covPose !== undefined) {
-      resolved.covPose = msg.covPose;
-    }
-    else {
-      resolved.covPose = 0.0
+      resolved.covariance = new Array(36).fill(0)
     }
 
     return resolved;

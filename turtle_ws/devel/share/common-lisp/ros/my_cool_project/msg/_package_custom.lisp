@@ -3,8 +3,6 @@
           POSE
           VELOCITY-VAL
           VELOCITY
-          COVVELOCITY-VAL
-          COVVELOCITY
-          COVPOSE-VAL
-          COVPOSE
+          COVARIANCE-VAL
+          COVARIANCE
 ))
