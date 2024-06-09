@@ -22,13 +22,14 @@ void Controller::sendGoal()
     goal.target_pose.pose.position.y = 0.5;
     goal.target_pose.pose.orientation.w = 1.0;
 
-    ROS_INFO("Sending goal");
+    ROS_INFO("Sending goal to position (3.5, 0.5)");
+
     ac.sendGoal(goal);
 
-    //ac.waitForResult();
+    ac.waitForResult();
 
     if (ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
-        ROS_INFO("Hooray, the base moved 1 meter forward");
+        ROS_INFO("Hooray, the base moved to (3.5, 0.5)");
     else
-        ROS_INFO("The base failed to move forward 1 meter for some reason");
+        ROS_INFO("The base failed to move to (3.5, 0.5). State: %s", ac.getState().toString().c_str());
 }

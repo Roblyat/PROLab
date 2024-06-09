@@ -9,6 +9,8 @@
 #include <my_cool_project/custom.h>
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2/LinearMath/Matrix3x3.h>
+#include <std_msgs/Float64.h>
+#include <std_msgs/Float64MultiArray.h>
 
 class KalmanFilter {
 public:
@@ -26,17 +28,19 @@ private:
     ros::Subscriber odom_sub;
     ros::Publisher prediction_pub;
     ros::Publisher covPose_pub;
+    ros::Publisher debug_pub;
+
     nav_msgs::Odometry odom;
     geometry_msgs::Pose2D poseWorld;
     geometry_msgs::Twist twistWorld;
     geometry_msgs::PoseWithCovarianceStamped covePose;
+    my_cool_project::custom prediction;
     
     tf2::Quaternion q;
-    my_cool_project::custom prediction;
     Eigen::VectorXd u;
     ros::NodeHandle nh;
     ros::Time last_time_;
-    double dt, theta, theta_new;
+    double dt, theta, timer;
     Eigen::VectorXd mu_t;  // State estimate
     Eigen::MatrixXd Sigma_t;  // State covariance
     Eigen::MatrixXd A_t;  // State transition model
