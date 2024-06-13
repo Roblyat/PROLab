@@ -10,12 +10,14 @@ KalmanFilter::KalmanFilter(ros::NodeHandle &N) : nh(N)
   prediction_pub = nh.advertise<my_cool_project::custom>("/prediction", 1);
   covPose_pub = nh.advertise<geometry_msgs::PoseWithCovarianceStamped>("/covPose", 1);
   debug_pub = nh.advertise<std_msgs::Float64MultiArray>("/debug", 1);
+  imu_sub = nh.subscribe("/imu", 1, &KalmanFilter::imuCallback, this);
 
   // KalmanFilter
   //  Initialize state and covariance
   mu_t = Eigen::VectorXd(6);
   prediction.covariance = {0};
   mu_t << 0.5, 0.5, 0.0, 0.0, 0.0, 0.0; // Initialize start state //YAML PARAMSERVER
+  z = Eigen::VectorXd(6);
   Sigma_t = 0.001 * Eigen::MatrixXd::Identity(6, 6);
 
   // Initialize models (example values, you should set these according to your system)
@@ -27,11 +29,12 @@ KalmanFilter::KalmanFilter(ros::NodeHandle &N) : nh(N)
   B_t = Eigen::MatrixXd(6, 2);
 
   R_t = 0.001 * Eigen::MatrixXd::Identity(6, 6);
-  C_t = Eigen::MatrixXd::Identity(6, 6);
+  C_t = Eigen::MatrixXd::Identity(6, 6);  // Observation model
   Q_t = 0.1 * Eigen::MatrixXd::Identity(6, 6);
+  K_t = Eigen::MatrixXd::Zero(6, 6);
 }
 
-void KalmanFilter::predict()
+void KalmanFilter::predict()  //############## METHODE aufteilen ####
 {
   u = Eigen::VectorXd(2);
   u << odom.twist.twist.linear.x, odom.twist.twist.angular.z;
@@ -125,7 +128,25 @@ void KalmanFilter::odomCallback(const nav_msgs::Odometry::ConstPtr &msg)
     // ROS_INFO("Current publish rate: %.2f sec", dt);
   }
   last_time_ = current_time;
+
+  predict();
 };
+
+void KalmanFilter::imuCallback(const sensor_msgs::Imu::ConstPtr &msg)
+{
+  
+  std::cout << "IMU data: " << msg->linear_acceleration.x << std::endl;
+  std::cout << "IMU data:" << msg->angular_velocity.z << std::endl;
+  // ROS_INFO("IMU data: %.2f %.2f %.2f", imu.orientation.x, imu.orientation.y, imu.orientation.z);
+  z << msg->linear_acceleration.x * cos(prediction.pose.theta) * dt,
+       msg->linear_acceleration.x * sin(prediction.pose.theta) * dt,
+       msg->angular_velocity.z,
+       msg->linear_acceleration.x * cos(prediction.pose.theta),   //############### oder IMU.angluar_velocity.x / dt
+       msg->linear_acceleration.x * sin(prediction.pose.theta),
+       msg->angular_velocity.z / dt;
+
+  update();
+}
 
 double KalmanFilter::normalizeAngle(double angle) {
     while (angle > M_PI) angle -= 2.0 * M_PI;
@@ -139,11 +160,25 @@ tf2::Quaternion KalmanFilter::eulerToQuaternion(double roll, double pitch, doubl
     return q;
 }
 
-void KalmanFilter::update(const Eigen::VectorXd &z)
-{
-  Eigen::MatrixXd K_t = Sigma_t * C_t.transpose() * (C_t * Sigma_t * C_t.transpose() + Q_t).inverse();
-  mu_t = mu_t + K_t * (z - C_t * mu_t);
-  Sigma_t = (Eigen::MatrixXd::Identity(3, 3) - K_t * C_t) * Sigma_t;
+void KalmanFilter::update()
+{ 
+  C_t << 1/dt, 0, 0, 0, 0, 0,
+         0, 1/dt, 0, 0, 0, 0,
+         0, 0, 1/dt, 0, 0, 0,
+         0, 0, 0, 1/dt, 0, 0,
+         0, 0, 0, 0, 1/dt, 0,
+         0, 0, 0, 0, 0, 1/dt;
+
+  K_t = Sigma_t * C_t.transpose() * (C_t * Sigma_t * C_t.transpose() + Q_t).inverse();
+  
+  // std::cout << "K_t: " << K_t << std::endl;
+
+  // mu_t = mu_t + K_t * (z - C_t * mu_t);
+ 
+  Eigen::VectorXd test = Eigen::VectorXd(6);
+  test = z; //- C_t * mu_t;
+  std::cout << "test: " << test << std::endl;
+  // Sigma_t = (Eigen::MatrixXd::Identity(6, 6) - K_t * C_t) * Sigma_t;
 }
 
 Eigen::VectorXd KalmanFilter::getState() const

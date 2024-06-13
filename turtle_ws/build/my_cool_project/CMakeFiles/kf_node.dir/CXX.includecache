@@ -57,6 +57,8 @@ std_msgs/Float64.h
 -
 std_msgs/Float64MultiArray.h
 -
+sensor_msgs/Imu.h
+-
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string
@@ -889,6 +891,30 @@ ros/forwards.h
 /opt/ros/noetic/include/ros/ros/forwards.h
 
 /opt/ros/noetic/include/rosconsole/macros_generated.h
+
+/opt/ros/noetic/include/sensor_msgs/Imu.h
+string
+-
+vector
+-
+memory
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+geometry_msgs/Quaternion.h
+-
+geometry_msgs/Vector3.h
+-
+geometry_msgs/Vector3.h
+-
 
 /opt/ros/noetic/include/std_msgs/Float64.h
 string

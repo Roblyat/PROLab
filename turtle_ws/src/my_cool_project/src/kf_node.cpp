@@ -14,11 +14,8 @@ int main(int argc, char **argv)
 
   while (ros::ok())
   {
-    kalmanfilter.predict();
-
     ros::spinOnce();
     loop_rate.sleep(); // Sleep for the rest of the cycle to enforce the loop rate
-
   };
 
   return 0;
