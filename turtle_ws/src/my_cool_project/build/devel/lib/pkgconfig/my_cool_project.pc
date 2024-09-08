@@ -1,0 +1,8 @@
+prefix=/home/robat/catkin_ws/src/my_cool_project/build/devel
+
+Name: my_cool_project
+Description: Description of my_cool_project
+Version: 0.0.0
+Cflags: -I/home/robat/catkin_ws/src/my_cool_project/build/devel/include
+Libs: -L${prefix}/lib -lturtle
+Requires: message_runtime nav_msgs roscpp rospy sensor_msgs std_msgs dynamic_reconfigure actionlib move_base_msgs geometry_msgs

@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/opt/ros/noetic/include/**",
+        "/home/robat/catkin_ws/devel/include/**",
+        "/home/robat/catkin_ws/src/my_cool_project/include/**",
+        "/home/robat/catkin_ws/src/rblyt_algorithmic_payload_estimation/universal_robot/ur_kinematics/include/**",
+        "/usr/include/**",
+        "/home/robat/catkin_ws/src/my_cool_project/msg/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

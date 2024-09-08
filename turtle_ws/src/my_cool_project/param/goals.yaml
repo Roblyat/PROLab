@@ -1,0 +1,113 @@
+goals:
+  goal_0:
+    target_pose:
+      header:
+        frame_id: "map"
+      pose:
+        position:
+          x: 2.0
+          y: 0.0
+          z: 0.0
+        orientation:  # -90 degrees yaw
+          x: 0.0
+          y: 0.0
+          z: -0.707
+          w: 0.707
+  goal_1:
+    target_pose:
+      header:
+        frame_id: "map"
+      pose:
+        position:
+          x: 1.0
+          y: -1.7
+          z: 0.0
+        orientation:  # +180 degrees yaw
+          x: 0.0
+          y: 0.0
+          z: 1.0
+          w: 0.0
+  goal_2:
+    target_pose:
+      header:
+        frame_id: "map"
+      pose:
+        position:
+          x: 0.0
+          y: -1.7
+          z: 0.0
+        orientation:  # +180 degrees yaw
+          x: 0.0
+          y: 0.0
+          z: 1.0
+          w: 0.0
+  goal_3:
+    target_pose:
+      header:
+        frame_id: "map"
+      pose:
+        position:
+          x: -1.0
+          y: -1.7
+          z: 0.0
+        orientation:  # +180 degrees yaw
+          x: 0.0
+          y: 0.0
+          z: 1.0
+          w: 0.0
+  goal_4:
+    target_pose:
+      header:
+        frame_id: "map"
+      pose:
+        position:
+          x: -2.0
+          y: 0.0
+          z: 0.0
+        orientation:  # 90 degrees yaw
+          x: 0.0
+          y: 0.0
+          z: 0.707
+          w: 0.707
+  goal_5:
+    target_pose:
+      header:
+        frame_id: "map"
+      pose:
+        position:
+          x: -1.0
+          y: 1.7
+          z: 0.0
+        orientation:  # Same as spawn (0 degrees yaw)
+          x: 0.0
+          y: 0.0
+          z: 0.0
+          w: 1.0
+  goal_6:
+    target_pose:
+      header:
+        frame_id: "map"
+      pose:
+        position:
+          x: 0.0
+          y: 1.7
+          z: 0.0
+        orientation:  # Same as spawn (0 degrees yaw)
+          x: 0.0
+          y: 0.0
+          z: 0.0
+          w: 1.0
+  goal_7:
+    target_pose:
+      header:
+        frame_id: "map"
+      pose:
+        position:
+          x: 1.0
+          y: 1.7
+          z: 0.0
+        orientation:  # Same as spawn (0 degrees yaw)
+          x: 0.0
+          y: 0.0
+          z: 0.0
+          w: 1.0
