@@ -1,2 +1,0 @@
-my_cool_project
--DCATKIN_DEVEL_PREFIX=/home/robat/.localgit/PROLab/turtle_ws/devel -DCMAKE_INSTALL_PREFIX=/home/robat/.localgit/PROLab/turtle_ws/install -G Unix Makefiles
