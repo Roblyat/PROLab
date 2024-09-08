@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "dense": "cpp",
-        "*.msg": "cpp"
-    },
-    "ros.distro": "noetic"
-}
