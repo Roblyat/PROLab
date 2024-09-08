@@ -119,7 +119,7 @@ void SensorModel::correct(std::vector<Particle> &particles, const sensor_msgs::L
 
     // Normalize weights to sum up to 1
     normalizeWeights(particles);
-    ROS_INFO("Weights normalized");
+    // ROS_INFO("Weights normalized");
 }
 
 // Function to calculate the normal (Gaussian) probability density function

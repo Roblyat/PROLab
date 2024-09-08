@@ -51,6 +51,7 @@ private:
     ros::Publisher particles_pub;
     std::vector<Particle> particles;
     int num_particles_;
+    double percentage_rand_particles = 0.2;  // Example: 10% random particles
     
 
     //debug

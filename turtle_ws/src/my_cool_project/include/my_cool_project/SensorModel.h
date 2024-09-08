@@ -24,5 +24,5 @@ private:
     double z_short = 0.1;   // Probability for short reading model
     double z_max = 0.05;    // Probability for max range reading model
     double z_rand = 0.05;   // Probability for random measurement model
-    double sigma_hit = 0.2; // Standard deviation for the hit model
+    double sigma_hit = 0.3; // Standard deviation for the hit model
 };

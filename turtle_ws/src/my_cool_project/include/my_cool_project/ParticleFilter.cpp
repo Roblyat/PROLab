@@ -88,8 +88,6 @@ void ParticleFilter::initializeParticles() {
     std::uniform_int_distribution<> distrib(0, free_cells.size() - 1); // For random positions
     std::uniform_real_distribution<double> orientation_distribution(-M_PI, M_PI); // For random orientations
     
-    bool cheat = false; // Option for cheat initialization (not used here)
-
     // Initialize particles with random positions and orientations
     for (int i = 0; i < num_particles_; ++i) {
         Particle particle;
@@ -161,7 +159,6 @@ void ParticleFilter::resampleParticles() {
     std::discrete_distribution<> distribution(weights.begin(), weights.end());
 
     // Determine number of random particles to add
-    double percentage_rand_particles = 0.1;  // Example: 10% random particles
     int num_random_particles = static_cast<int>(particles.size() * percentage_rand_particles);
     int num_resampled_particles = particles.size() - num_random_particles;
 
@@ -227,7 +224,7 @@ void ParticleFilter::resampleParticles() {
     // Replace the old particle set with the new resampled set
     particles = new_particles;
 
-    ROS_INFO("Particles resampled successfully.");
+    // ROS_INFO("Particles resampled successfully.");
 }
 
 // Function to publish the current set of particles for visualization

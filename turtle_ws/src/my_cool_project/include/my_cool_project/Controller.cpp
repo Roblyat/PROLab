@@ -36,26 +36,29 @@ Controller::Controller(ros::NodeHandle &N) : ac("move_base", true), nh(N)
 
 void Controller::sendGoal()
 {
-    for (int i = 0; i < 8; i++)
-    {
-        ROS_INFO("Sending goal_%d to move_base...", i);
-        ac.sendGoal(*goals[i]); // Send the current goal
-
-        // Wait for the result
-        ac.waitForResult();
-
-        if (ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+    for(int rep = 0; rep < 2; rep++){
+        
+        for (int i = 0; i < 8; i++)
         {
-            ROS_INFO("Hooray, the base moved to goal_%d!", i);
+            ROS_INFO("Sending goal_%d to move_base...", i);
+            ac.sendGoal(*goals[i]); // Send the current goal
+
+            // Wait for the result
+            ac.waitForResult();
+
+            if (ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+            {
+                ROS_INFO("Hooray, the base moved to goal_%d!", i);
+            }
+            else
+            {
+                ROS_WARN("The base failed to move to goal_%d. State: %s", i, ac.getState().toString().c_str());
+                // Optionally, break the loop if a goal fails or continue depending on your strategy
+                // break; // Exit the loop if one goal fails
+            }
         }
-        else
-        {
-            ROS_WARN("The base failed to move to goal_%d. State: %s", i, ac.getState().toString().c_str());
-            // Optionally, break the loop if a goal fails or continue depending on your strategy
-            // break; // Exit the loop if one goal fails
-        }
+        ROS_INFO("All goals have been processed.");
     }
-    ROS_INFO("All goals have been processed.");
 }
 
 
